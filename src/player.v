@@ -60,7 +60,11 @@ module tt_um_meriac_play_tune #( parameter MAX_COUNT = 100 ) (
     assign uio_oe = 8'b11111111;
     assign uio_out[0] = speaker;
     assign uio_out[1] = ~speaker;
-    assign uio_out[7:2] = 0;
+    assign uio_out[6:2] = 0;
+    assign uio_out[7] = speaker;
+
+    // List all unused inputs to prevent warnings
+    wire _unused = &{ena, uio_in[7:0], 1'b0};
 
     always @(posedge clk) begin
 

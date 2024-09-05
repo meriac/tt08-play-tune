@@ -47,7 +47,7 @@ time_step = 1/wav_sampling_rate
 data=[]
 speaker=0
 
-with open('../src/test.tim') as f:
+with open('test.tim') as f:
 	for line in f:
 			matches = re.match(r'^[ ]+Edge:[ ]+([0-9.]+) ([0-9])$', line)
 			if matches:
